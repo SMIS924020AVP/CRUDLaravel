@@ -23,7 +23,7 @@
             <td>{{$cliente->Sucursal}}</td>
             <td>{{$cliente->Ciudad}}</td>
         <td>
-            <form action="{{ route('clientes.destroy',$cliente->id) }}" method="POST">
+          <form action="{{ route('clientes.destroy',$cliente->id) }}" method="POST">
           <a href="/clientes/{{$cliente->id}}/edit" class="btn btn-info">Editar</a>         
               @csrf
               @method('DELETE')
