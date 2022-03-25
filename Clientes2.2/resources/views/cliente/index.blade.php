@@ -22,9 +22,13 @@
             <td>{{$cliente->Fecha}}</td>
             <td>{{$cliente->Sucursal}}</td>
             <td>{{$cliente->Ciudad}}</td>
-
-            <a class="btn btn-info">Editar</a> 
-            <button class="btn btn danger">Borrar</button>
+        <td>
+            <form action="{{ route('clientes.destroy',$cliente->id) }}" method="POST">
+          <a href="/clientes/{{$cliente->id}}/edit" class="btn btn-info">Editar</a>         
+              @csrf
+              @method('DELETE')
+          <button type="submit" class="btn btn-danger">Delete</button>
+        </td>  
         </tr>
         @endforeach
     </tbody>
